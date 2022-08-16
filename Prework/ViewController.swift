@@ -16,19 +16,36 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var TextLabel: UILabel!
     
+    @IBOutlet weak var textField: UITextField!
+    
     @IBOutlet var Background: UIView!
     
     @IBOutlet weak var BgButton: UIButton!
     
     @IBAction func ButtonClicked(_ sender: Any) {
-        print("hello")
-        TextLabel.textColor = UIColor.orange
-        TextLabel.text = "Goodbye"
+        TextLabel.textColor = UIColor.blue
+        TextLabel.text = "Goodbye 👋"
     }
     @IBAction func BgButtonClicked(_ sender: Any) {
-        print("yo")
-        Background.backgroundColor = UIColor.magenta
+        Background.backgroundColor = UIColor.lightGray
     }
     
+    @IBAction func ChangeTextClicked(_ sender: Any) {
+        let inputText = textField.text
+        if inputText == "" {
+            TextLabel.text = "Goodbye 👋"
+        }
+        else {
+        TextLabel.text = inputText
+        }
+        textField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        Background.backgroundColor = UIColor.secondaryLabel
+        TextLabel.text = "Hello"
+        TextLabel.textColor = UIColor.systemPink
+        textField.text = ""
+    }
 }
 
