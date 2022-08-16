@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     
     @IBAction func ButtonClicked(_ sender: Any) {
         TextLabel.textColor = UIColor.blue
-        TextLabel.text = "Goodbye 👋"
     }
     @IBAction func BgButtonClicked(_ sender: Any) {
         Background.backgroundColor = UIColor.lightGray
